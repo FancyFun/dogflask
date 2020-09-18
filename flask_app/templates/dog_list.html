@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>This is an HTML page</title>
+  </head>
+  <body>
+    <p> You have saved these dogs: </p>
+<ul>
+    {% for dog in names %}
+      <li> {{ dog }} </li>
+    {% endfor %}
+</ul>
+    <form action="/view_dog" method=post>
+      <label for="dogname"> Choose a Dog </label>
+      <select id="dogname" name="dogname">
+        {% for dog in names %}
+        <option value="{{dog}}">{{dog}}</option>
+        {% endfor %}
+      </select>
+      <input type='submit' value='See dog'>
+    </form>
+  </body>
+</html>
